@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpException, HttpStatus, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpException, HttpStatus, Post,UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
 
 
@@ -16,4 +16,7 @@ export class UserController {
         }
         return await this.userservice.createUser(body.data)
     }
+
+    
+
 }

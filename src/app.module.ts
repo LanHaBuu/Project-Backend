@@ -4,6 +4,7 @@ import { UserModule } from './user/user.module';
 import { UserEntity } from './user/user.entity';
 import { AuthModule } from './auth/auth.module';
 
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -18,10 +19,12 @@ import { AuthModule } from './auth/auth.module';
       extra: {
         trustServerCertificate: true,
       },
-      requestTimeout: 5000
+      autoLoadEntities:true
     }),
     UserModule,
     AuthModule,
   ],
+
+
 })
 export class AppModule { }

@@ -19,7 +19,7 @@ export class AuthService {
         return null;
     }
     async createToken(user: UserEntity) {
-        const payload = { username: user.username, name: user.name };
+        const payload = { username: user.username, name: user.name,isAdmin:user.isAdmin };
         return {
             access_token: this.jwtService.sign(payload)
         };

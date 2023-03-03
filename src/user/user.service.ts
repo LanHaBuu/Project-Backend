@@ -16,4 +16,8 @@ export class UserService {
     createUser(body) {
         return this.userRepository.save(body)
     }
+
+    findAllUser() {
+        return this.userRepository.find()
+    }
 }
